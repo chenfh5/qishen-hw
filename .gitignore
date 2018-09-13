@@ -1,2 +1,7 @@
 *.class
 *.log
+/.idea/
+*.iml
+target/
+dependency-reduced-pom.xml
+/hw1/output
