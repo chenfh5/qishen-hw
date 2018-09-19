@@ -1,4 +1,4 @@
-package agg
+package io.github.chenfh5.common
 
 import org.apache.spark.SparkConf
 

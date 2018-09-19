@@ -1,4 +1,4 @@
-package common
+package io.github.chenfh5.common
 
 object OwnUtils {
 

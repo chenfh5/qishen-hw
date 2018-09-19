@@ -69,7 +69,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!--Spark-->
+            <!--Spark include hadoop 2.6.5 already-->
             <dependency>
                 <groupId>org.apache.spark</groupId>
                 <artifactId>spark-core_${scala.target.version}</artifactId>
