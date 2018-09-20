@@ -6,3 +6,4 @@ target/
 dependency-reduced-pom.xml
 /hw1/output
 /hw1/doc
+/hw1/log
