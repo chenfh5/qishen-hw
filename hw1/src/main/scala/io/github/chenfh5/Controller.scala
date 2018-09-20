@@ -35,10 +35,10 @@ object Controller {
   }
 
   def initSparkContext(): SparkContext = {
-    System.setProperty("spark.app.name", "Spark Unit Test")
-    System.setProperty("spark.master", "local[2]")
     val conf = SparkEnvironment.getSparkConf
-    new SparkContext(conf)
+    conf.set("spark.app.name", s"Spark Unit Test")
+    conf.set("spark.master", "local[2]")
+    SparkContext.getOrCreate(conf)
   }
 
   def testMRWc(): Unit = {
