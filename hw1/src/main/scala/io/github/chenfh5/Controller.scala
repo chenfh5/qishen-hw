@@ -1,6 +1,6 @@
 package io.github.chenfh5
 
-import io.github.chenfh5.agg.mr.MRAggregation
+import io.github.chenfh5.agg.mr.{MRAggregation, MRAggregationJava}
 import io.github.chenfh5.agg.spark.SparkAggregation
 import io.github.chenfh5.common.{OwnUtils, SparkEnvironment}
 import io.github.chenfh5.wc.mr.MRWc
@@ -19,26 +19,29 @@ object Controller {
       case 11 => testMRWc()
       case 12 => testSparkWc()
       case 21 => testMRAgg()
+      case 212 => testMRAggJava()
       case 22 => testSparkAgg()
       case _ => println(help())
     }
   }
 
   def help(): String = {
-    """
-      |USAGE:
-      |11 => MRWc()
-      |12 => SparkWc()
-      |21 => MRAgg()
-      |22 => SparkAgg()
+    s"""
+       |CURRENT PATH = ${OwnUtils.makeFile(OwnUtils.getCurrentDir)}
+       |USAGE:
+       |11  => MRWc()
+       |12  => SparkWc()
+       |21  => MRAgg()
+       |212 => MRAggJava()
+       |22  => SparkAgg()
     """.trim.stripMargin
   }
 
   def initSparkContext(): SparkContext = {
-    System.setProperty("spark.app.name", "Spark Unit Test")
-    System.setProperty("spark.master", "local[2]")
     val conf = SparkEnvironment.getSparkConf
-    new SparkContext(conf)
+    conf.set("spark.app.name", s"Spark Unit Test")
+    conf.set("spark.master", "local[2]")
+    SparkContext.getOrCreate(conf)
   }
 
   def testMRWc(): Unit = {
@@ -59,8 +62,15 @@ object Controller {
 
   def testMRAgg(): Unit = {
     val srcPath = OwnUtils.makeFile(OwnUtils.getCurrentDir, "input", "edges.csv")
-    val destPath = OwnUtils.makeFile(OwnUtils.getCurrentDir, "output", "mr", "agg")
+    val destPath = OwnUtils.makeFile(OwnUtils.getCurrentDir, "output", "mr", "aggScala")
     val res = MRAggregation.process(srcPath, destPath)
+    println(res)
+  }
+
+  def testMRAggJava(): Unit = {
+    val srcPath = OwnUtils.makeFile(OwnUtils.getCurrentDir, "input", "edges.csv")
+    val destPath = OwnUtils.makeFile(OwnUtils.getCurrentDir, "output", "mr", "aggJava")
+    val res = MRAggregationJava.process(srcPath, destPath)
     println(res)
   }
 
