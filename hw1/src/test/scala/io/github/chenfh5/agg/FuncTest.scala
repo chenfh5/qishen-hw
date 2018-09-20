@@ -38,6 +38,11 @@ class FuncTest {
   }
 
   @Test(enabled = true, priority = 1)
+  def testMRAggJava(): Unit = {
+    Controller.main(Array("212"))
+  }
+
+  @Test(enabled = true, priority = 1)
   def testSparkAgg(): Unit = {
     Controller.main(Array("22"))
   }

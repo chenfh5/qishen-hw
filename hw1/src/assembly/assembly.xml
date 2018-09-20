@@ -4,16 +4,9 @@
           http://maven.apache.org/xsd/assembly-2.0.0.xsd">
     <id>bin</id>
     <formats>
-        <format>dir</format>
+        <format>zip</format>
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
-
-    <dependencySets>
-        <dependencySet>
-            <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>lib</outputDirectory>
-        </dependencySet>
-    </dependencySets>
 
     <fileSets>
         <fileSet>
@@ -31,6 +24,14 @@
                 <include>*.sh</include>
             </includes>
             <fileMode>0755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>input</directory>
+            <outputDirectory>input</outputDirectory>
+            <includes>
+                <include>*</include>
+            </includes>
         </fileSet>
     </fileSets>
 

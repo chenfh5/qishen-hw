@@ -18,7 +18,7 @@ object OwnUtils {
   }
 
   // path util
-  private val currentDir: String = new java.io.File("").getAbsolutePath
+  private val currentDir: String = new java.io.File(getClass.getProtectionDomain.getCodeSource.getLocation.toURI.getPath).getParentFile.getParent
 
   def getCurrentDir: String = currentDir
 
