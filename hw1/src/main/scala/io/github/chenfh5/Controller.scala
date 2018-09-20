@@ -13,6 +13,7 @@ object Controller {
   def main(args: Array[String]): Unit = {
     require(StringUtils.isNoneBlank(System.getenv("JAVA_HOME")))
     require(StringUtils.isNoneBlank(System.getenv("HADOOP_HOME"))) // winutils.ext in case of Windows OS, and restart IDE
+    require(args.length > 0, "sh script/run.sh 99")
 
     args.head.toInt match {
       case 11 => testMRWc()
