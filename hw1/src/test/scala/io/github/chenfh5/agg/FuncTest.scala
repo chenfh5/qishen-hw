@@ -47,4 +47,13 @@ class FuncTest {
     Controller.main(Array("22"))
   }
 
+  @Test(enabled = true, priority = 1)
+  def testSparkAgg2(): Unit = {
+    Controller.main(Array("321"))
+    Controller.main(Array("322"))
+    Controller.main(Array("323"))
+    Controller.main(Array("324"))
+    Controller.main(Array("325"))
+  }
+
 }

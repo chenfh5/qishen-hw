@@ -1,12 +1,14 @@
 package io.github.chenfh5.wc.spark
 
+import io.github.chenfh5.common.SparkEnvironment
 import org.apache.spark.SparkContext
 import org.slf4j.LoggerFactory
 
 class SparkWc {
   private val LOG = LoggerFactory.getLogger(getClass)
+  private val sc: SparkContext = SparkEnvironment.getSparkSession.sparkContext
 
-  def process(srcPath: String, destPath: String, sc: SparkContext): Unit = {
+  def process(srcPath: String, destPath: String): Unit = {
     LOG.info("this is the SparkWc srcPath={}, destPath={}", Seq(srcPath, destPath): _*)
     val textFile = sc.textFile(srcPath)
 
