@@ -25,6 +25,7 @@ object Controller {
       case 323 => testSparkAgg2(3)
       case 324 => testSparkAgg2(4)
       case 325 => testSparkAgg2(5)
+      case 326 => testSparkAgg2(6)
       case _ => println(help())
     }
   }
@@ -93,13 +94,14 @@ object Controller {
     def makeDestpath(suffix: String): String = OwnUtils.makeFile(OwnUtils.getCurrentDir, "output", "spark", "aggHW2", suffix)
 
     val srcPath = OwnUtils.makeFile(OwnUtils.getCurrentDir, "input", "edges.csv")
-    val agg = SparkAggregationHW2()
+    val agg = SparkAggregationHW2(Int.MaxValue)
     flag match {
       case 1 => agg.RDDG(srcPath, makeDestpath("RDDG"))
       case 2 => agg.RDDR(srcPath, makeDestpath("RDDR"))
       case 3 => agg.RDDF(srcPath, makeDestpath("RDDF"))
       case 4 => agg.RDDA(srcPath, makeDestpath("RDDA"))
       case 5 => agg.DSET(srcPath, makeDestpath("DSET"))
+      case 6 => agg.DSTRIANGLE(srcPath, makeDestpath("DSTRIANGLE"))
       case _ => throw new IllegalArgumentException("Unsupported method")
     }
   }

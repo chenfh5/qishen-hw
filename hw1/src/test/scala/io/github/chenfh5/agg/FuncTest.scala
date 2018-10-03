@@ -54,6 +54,7 @@ class FuncTest {
     Controller.main(Array("323"))
     Controller.main(Array("324"))
     Controller.main(Array("325"))
+    Controller.main(Array("326"))
   }
 
 }
