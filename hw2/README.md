@@ -3,4 +3,4 @@
 
 
 # Reference
-- [HW2](https://github.com/manpreet-k/ManagingSoftwareDev/tree/9601a2ef52d1d1e57fcbe75be19fefdf2141c343/HW2)
+- [HW2](https://github.com/manpreet-k/ManagingSoftwareDev/tree/master/HW2)
