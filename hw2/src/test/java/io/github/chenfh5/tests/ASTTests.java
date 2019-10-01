@@ -21,7 +21,6 @@ public class ASTTests {
         Stmt decl = new DeclStmt("x");
         Stmt assign = new Assignment("x", exp);
         Stmt seq = new Sequence(decl, assign);
-        System.out.println(seq.text());
         assertEquals(seq.text(), "var x; x = 1 + 3");
     }
 
