@@ -1,6 +1,6 @@
-package io.github.chenfh5.ast.stmt;
+package io.github.chenfh5.ast.ast1.stmt;
 
-import io.github.chenfh5.ast.exp.Exp;
+import io.github.chenfh5.ast.ast1.exp.Exp;
 
 /**
  * Declaration class declares a variable.
@@ -19,10 +19,10 @@ public class DeclStmt implements Stmt {
     /**
      * This constructor sets the string value of the declaration statement for an Expression
      *
-     * @param var : Variable which is to be declared.
+     * @param exp : Variable which is to be declared.
      */
-    public DeclStmt(Exp var) {
-        declText = TEXT_VAR + var.text();
+    public DeclStmt(Exp exp) {
+        declText = TEXT_VAR + exp.text();
     }
 
     /**

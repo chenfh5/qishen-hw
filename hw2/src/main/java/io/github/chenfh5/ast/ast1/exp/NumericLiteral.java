@@ -1,7 +1,4 @@
-/**
- *
- */
-package io.github.chenfh5.ast.exp;
+package io.github.chenfh5.ast.ast1.exp;
 
 /**
  * This class provides the text representation of the Number expression
