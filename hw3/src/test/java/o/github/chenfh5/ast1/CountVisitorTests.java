@@ -3,12 +3,14 @@ package o.github.chenfh5.ast1;
 import io.github.chenfh5.ast0.*;
 import io.github.chenfh5.ast1.CountVisitor;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
 class CountVisitorTests {
 
     @Test
+    @DisplayName("normal case")
     void test1() {
         // init Exp
         Exp one = new NumericLiteral(1);
