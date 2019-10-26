@@ -23,4 +23,12 @@ public class PlusExp extends Exp {
 
     private Exp left;
     private Exp right;
+
+    public Exp getLeft() {
+        return this.left;
+    }
+
+    public Exp getRight() {
+        return this.right;
+    }
 }

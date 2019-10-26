@@ -21,4 +21,8 @@ public class DeclStmt extends Stmt {
     }
 
     private String varName;
+
+    public String getVarName() {
+        return varName;
+    }
 }

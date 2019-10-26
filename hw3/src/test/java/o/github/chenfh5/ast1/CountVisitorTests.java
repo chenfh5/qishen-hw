@@ -2,14 +2,14 @@ package o.github.chenfh5.ast1;
 
 import io.github.chenfh5.ast0.*;
 import io.github.chenfh5.ast1.CountVisitor;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 
-public class CountVisitorTests {
+class CountVisitorTests {
 
     @Test
-    public void test1() {
+    void test1() {
         // init Exp
         Exp one = new NumericLiteral(1);
         Exp three = new NumericLiteral(3);
@@ -30,9 +30,9 @@ public class CountVisitorTests {
         int[] res = visitor.report();
 
         // verify
-        Assert.assertEquals(res[0], 3);
-        Assert.assertEquals(res[1], 3);
-        Assert.assertEquals(res[2], 6);
+        Assertions.assertEquals(res[0], 3);
+        Assertions.assertEquals(res[1], 3);
+        Assertions.assertEquals(res[2], 6);
     }
 
 }
