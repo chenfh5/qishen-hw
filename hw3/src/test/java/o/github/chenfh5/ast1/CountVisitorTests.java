@@ -34,7 +34,6 @@ class CountVisitorTests {
         // verify
         Assertions.assertEquals(res[0], 3);
         Assertions.assertEquals(res[1], 3);
-        Assertions.assertEquals(res[2], 6);
     }
 
 }

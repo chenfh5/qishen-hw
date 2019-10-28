@@ -23,12 +23,12 @@ public class CountVisitor implements ASTVisitor {
 
     @Override
     public void visit(PlusExp p) {
-        // empty
+        expCnt++;
     }
 
     @Override
     public void visit(DeclStmt d) {
-        // empty
+        stmtCnt++;
     }
 
     public int[] report() {
