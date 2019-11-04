@@ -1,0 +1,11 @@
+QuickSorterTests coverage by eclemma
+statement coverage  100%
+branch coverage  5/5
+
+HeapSorterTests coverage by eclemma
+statement coverage  100%
+branch coverage  5/5
+
+MergeSorterTests coverage by eclemma
+statement coverage  100%
+branch coverage  5/5
