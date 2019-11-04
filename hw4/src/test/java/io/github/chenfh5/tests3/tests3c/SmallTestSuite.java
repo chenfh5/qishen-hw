@@ -1,10 +1,9 @@
-package io.github.chenfh5.test3.test3e;
+package io.github.chenfh5.tests3.tests3c;
 
 /**
  * Test suite to be used in CS5500 Fall 2019 Section 1 Homework 4, question 3.
  */
-
-import io.github.chenfh5.sorters.MergeSorter;
+import io.github.chenfh5.sorters.HeapSorter;
 import io.github.chenfh5.sorters.Sorter;
 import org.junit.Test;
 
@@ -19,7 +18,7 @@ public class SmallTestSuite {
      * @return
      */
     private static <T extends Comparable<T>> Sorter<T> createSorter() {
-        return new MergeSorter<>();
+        return new HeapSorter<T>();
     }
 
     // -----------------------------------------------
