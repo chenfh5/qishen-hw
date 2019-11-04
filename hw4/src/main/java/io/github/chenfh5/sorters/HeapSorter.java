@@ -4,21 +4,23 @@ public class HeapSorter<T extends Comparable<T>> implements Sorter {
 
     @Override
     public void sort(Comparable[] list) {
-        int n = list.length;
+        if (list != null) {
+            int n = list.length;
 
-        // Build heap (rearrange array)
-        for (int i = n / 2 - 1; i >= 0; i--)
-            heapify(list, n, i);
+            // Build heap (rearrange array)
+            for (int i = n / 2 - 1; i >= 0; i--)
+                heapify(list, n, i);
 
-        // One by one extract an element from heap
-        for (int i = n - 1; i >= 0; i--) {
-            // Move current root to end
-            Comparable temp = list[0];
-            list[0] = list[i];
-            list[i] = temp;
+            // One by one extract an element from heap
+            for (int i = n - 1; i >= 0; i--) {
+                // Move current root to end
+                Comparable temp = list[0];
+                list[0] = list[i];
+                list[i] = temp;
 
-            // call max heapify on the reduced heap
-            heapify(list, i, 0);
+                // call max heapify on the reduced heap
+                heapify(list, i, 0);
+            }
         }
     }
 
